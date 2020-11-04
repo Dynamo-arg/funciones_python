@@ -19,7 +19,7 @@ import random
 
 
 def imprimir_nombre(nombre, apellido):
-    pass
+    print(nombre, apellido)
     # En este lugar debe colocar el "print" e imprimir
     # en pantalla el nombre y apellido que vienen por parámetro
     # print(.....)
@@ -29,7 +29,11 @@ def promedio(numeros):
     # Alumno:
     # 1) calcule el promedio
     # 2) use "return" para retornar ese valor
-    pass  # Cuando termine de implementar está función borrar "pass"
+    if len(numeros) == 0:
+        print("Error no hay elementos para sacar promedio")
+    else:
+        xxx = sum(numeros) / len(numeros)
+        return xxx
 
 
 def ej1():
@@ -39,14 +43,13 @@ def ej1():
     # Esa función ya se encuentra a medio armar al principio de este archivo.
     # Debe cumpletar la función para que se imprima en pantalla su nombre y apellido
     # Debe invocar a la función como:
-    imprimir_nombre('mi_nombre', 'mi_apellido')
+    imprimir_nombre('Sebastian', 'Volpe')
 
     # Reemplazar por su nombre y apellido los textos
 
 
 def ej2():
     # Ejercicios con funciones del sistema
-    numeros = [2, 4, 6, 8, 10, 12]
 
     '''
     Realice una funcion llamada "promedio" la cual
@@ -78,8 +81,11 @@ def ej2():
 
     # Llamar a la función en este lugar y capturar el valor del retorno
     # promedio_re
+    numeros = [2, 4, 6, 8, 10, 12]
+    promedio_re = promedio(numeros)
 
     # Luego imprimir en pantalla el valor resultante, tal que:
+    print("Promedio es", promedio_re)
 
 
 def ej3():
@@ -166,8 +172,8 @@ def ej5():
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
+    # ej1()
     # ej2()
-    # ej3()
+    ej3()
     # ej4()
     # ej5()
