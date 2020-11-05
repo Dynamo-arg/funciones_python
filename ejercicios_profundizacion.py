@@ -15,6 +15,10 @@ __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
 __version__ = "1.3"
 
+from ejercicios_practica import lista_aleatoria
+from ejercicios_practica import promedio
+from ejercicios_practica import contar
+from ejercicios_practica import ordenar
 
 def ej1():
     print('Comencemos a crear lo nuestro!')
@@ -48,12 +52,19 @@ def ej2():
     se deben parecer a:
     [1, 2, 3, 2, 5]
     Cada valor representa el valor que sacó cada uno de los 5 dados
-
+    
     1)
     Utilice la función "ordenar" para ordenar la lista
     de números generados.
     Imprimir en pantalla la lista ordenada
     '''
+    # Creo la lista random con los datos:
+    tiro_dados = lista_aleatoria(1,6,5)
+    print("Los 5 tiros de los dados fueron" , tiro_dados)
+
+    # Ordeno los mismos:
+    ordenar(tiro_dados)
+    print("Los numeros ordenados son", tiro_dados)
 
 
 def ej3():
@@ -87,6 +98,18 @@ def ej3():
     vistos en clase para ver como se implementa max con esa key
 
     '''
+    # Creo la lista random con los datos:
+    tiro_dados = lista_aleatoria(1,6,5)
+    print("Los 5 tiros de los dados fueron" , tiro_dados)
+
+    a = contar(tiro_dados,1)
+    b = contar(tiro_dados,2)
+    c = contar(tiro_dados,3)
+    d = contar(tiro_dados,4)
+    e = contar(tiro_dados,5)
+    f = contar(tiro_dados,6)
+
+    print("El numero 1 aparece )
 
 
 def ej4():
@@ -150,5 +173,5 @@ if __name__ == '__main__':
     print("Ejercicios de práctica")
     # ej1()
     # ej2()
-    # ej3()
+    ej3()
     # ej4()
