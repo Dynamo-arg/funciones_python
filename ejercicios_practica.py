@@ -5,18 +5,16 @@ Ejercicios de práctica
 ---------------------------
 Autor: Inove Coding School
 Version: 1.2
-
 Descripcion:
 Programa creado para poner a prueba los conocimientos
 adquiridos durante la clase
 '''
 
-__author__ = "Inove Coding School"
+__author__ = "Sebastian Volpe"
 __email__ = "alumnos@inove.com.ar"
 __version__ = "1.2"
 
 import random
-
 
 def imprimir_nombre(nombre, apellido):
     print(nombre, apellido)
@@ -34,6 +32,32 @@ def promedio(numeros):
     else:
         xxx = sum(numeros) / len(numeros)
         return xxx
+
+
+def ordenar(numeros):
+    # Funcion ordenar
+    orden = numeros.sort()
+    return orden
+
+
+def lista_aleatoria (inicio, fin, cantidad):
+    lista = []
+    for i in range(inicio,cantidad+1):
+        numero = random.randrange(inicio, fin+1)
+        lista.append(numero)
+    return lista
+
+
+def contar (lista, valor):
+    total = 0
+    contador = 0
+    for i in lista:
+        if lista[contador] == valor:
+            total += 1
+            contador +=1
+        else:
+            contador +=1
+    return total
 
 
 def ej1():
@@ -56,7 +80,6 @@ def ej2():
     reciba como parámetro una lista de números y calcule
     el promedio de ella como:
     promedio = sumatoria_numeros / cantidad_numeros
-
     Resuelva la sumatoria y la cantidad con las herramientas
     que desee, recomendamos usar las funciones disponibles
     de Python para ello o en tal caso realizar un bucle.
@@ -64,14 +87,11 @@ def ej2():
     sum --> obtener la sumatoria de números
     len --> obtener la cantidad de números
     promedio = sumatoria_numeros / cantidad_numeros
-
     La función debe retornar (return) el promedio calculado
     La función debe contemplar si se le pasa una lista vacia
     (es decir, de "0" elementos)
-
     Utilice esa función para calcular el promedio y luego
     imprima en pantalla el resultado
-
     '''
     # La función ya se encuentra definida arriba de todo en el archivo,
     # busque al princpio de todo "def promedio"
@@ -90,17 +110,14 @@ def ej2():
 
 def ej3():
     # Ejercicios de listas y métodos
-    numeros = [2, 4, 6, 8, 10, 12]
 
     '''
     Generar una una nueva funcion que se llame "ordenar",
     que utilizaremos para odernar la lista de numeros.
     Dentro de la función puede ordenar la lista
     usando bucles o las funciones nativas de Python (sort)
-
     Aproveche el ejemplo de "promedio" para crear una función
     similar, la debe crear y escribir abajo de ella.
-
     '''
 
     # Luego de crear la función invocarla en este lugar:
@@ -108,17 +125,26 @@ def ej3():
     # Imprimir en pantalla "lista_ordenada" que tendrá
     # los valores retornado por la función ordenar
 
+    numeros = [2, 6, 4, 8, 12, 10]
+    ordenar(numeros)
+    lista_ordenada = numeros
+    print(lista_ordenada)
+
 
 def ej4():
     # Ejercicios con modulos del sistema
     inicio = 0
     fin = 10
     cantidad = 5
+    Lis_completa = []
+    Lis_completa = lista_aleatoria(inicio,fin,cantidad)
+    print(Lis_completa)
 
     # Ejemplo de como obtener un numero aleatorio
     # entre inicio y fin
     # inicio <= numero <= fin
     numero = random.randrange(inicio, fin+1)
+    
     # Documentación oficial de random
     # https://docs.python.org/3.7/library/random.html
     # Ante cualquier duda preguntar en el campus!
@@ -128,23 +154,23 @@ def ej4():
     reciba como parámetro el rango de aceptación de la lista
     "inicio y fin" y la cantidad de elementos que deseamos que
     contenga la lista, es decir, la cantidad de elementos random a generar.
-
     --> def lista_aleatoria (inicio, fin, cantidad)
-
     Para ello dentro de la función deberá realizar un bucle que repita "cantidad"
     veces esta operacion:
     numero = random.randrange(inicio, fin+1)
-
     Cada valor generado lo debe guardar en una lista, recuerde:
     1) Iniciar y crear esa lista vacia.
     2) Para agregar nuevos elementos en la lista utiliza "append"
-
     Finalmente dicha función debe retornar la lista de elementos random generados.
     '''
 
     # Invocar lista_aleatoria
+    mi_lista_aleatorio = []
+    mi_lista_aleatorio = lista_aleatoria(inicio,fin,cantidad)
+
     # mi_lista_aleatorio = lista_aleatoria(inicio, fin, cantidad)
     # print(mi_lista_aleatorio)
+    print(mi_lista_aleatorio)
 
 
 def ej5():
@@ -154,26 +180,28 @@ def ej5():
     '''
     Utilice la función "lista_aleatoria" para generar
     una lista de 5 números en un rango de 1 a 9 inclusive
-
     Generar una una nueva funcion que se llame "contar",
     que cuenta la cantidad de veces que un elemento pasado
     por parámetro se repite en la lista.
     Para saber cuantas veces se repiten el elemento pasado
     en la lista pueden usar bucles o el método nativo de list
     "count"
-
     '''
 
     # Por ejemplo creo una lista de 5 elemtnos
     # lista_numeros = lista_aleatoria(...,...,cantidad_numeros)
+    lista_numeros = lista_aleatoria(1,9,cantidad_numeros)
     # Luego quiero averiguar cuantas veces se repite el numero 3
     # cantidad_tres = contar(lista_numeros, 3)
+    repetidos = contar(lista_numeros,3)
+    print("De esta lista {} el numero 3 se repite {} veces.".format(lista_numeros, repetidos))
+
 
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    # ej1()
-    # ej2()
+    ej1()
+    ej2()
     ej3()
-    # ej4()
-    # ej5()
+    ej4()
+    ej5()
